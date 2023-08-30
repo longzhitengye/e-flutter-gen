@@ -21,5 +21,7 @@ No known issues at the moment.
 ### 1.0.0
 
 Initial release with the "FutureBuilder" snippet added.
+### 1.1.0
+add wrap with scaffold
 
 **Enjoy!**

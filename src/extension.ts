@@ -28,6 +28,15 @@ export function activate(context: vscode.ExtensionContext) {
 				false);
 		})
 	);
+	context.subscriptions.push(
+		vscode.commands.registerCommand('e-flutter-gen.scaffold', () => {
+			insertSnippet(
+				"Scaffold( \n body: ",
+				",)",
+				SpaceX(),
+				false);
+		})
+	);
 
 }
 
@@ -38,7 +47,7 @@ class DartQuickFixProvider implements vscode.CodeActionProvider {
 	provideCodeActions(document: vscode.TextDocument, range: vscode.Range | vscode.Selection, context: vscode.CodeActionContext, token: vscode.CancellationToken): vscode.ProviderResult<(vscode.CodeAction | vscode.Command)[]>;
 	provideCodeActions(document: vscode.TextDocument, range: vscode.Range | vscode.Selection, context: vscode.CodeActionContext, token: vscode.CancellationToken): vscode.ProviderResult<(vscode.Command)[]>;
 	provideCodeActions(document: unknown, range: unknown, context: unknown, token: unknown): (vscode.CodeAction | vscode.Command)[] | Thenable<(vscode.CodeAction | vscode.Command)[] | null | undefined> | (vscode.Command)[] | Thenable<(vscode.Command)[] | null | undefined> | null | undefined {
-	
+
 		const editorX = vscode.window.activeTextEditor;
 		if (!editorX) {
 			return [];
@@ -50,6 +59,10 @@ class DartQuickFixProvider implements vscode.CodeActionProvider {
 		codeActions.push({
 			command: "e-flutter-gen.futurebuilder",
 			title: "Wrap with FutureBuilder"
+		});
+		codeActions.push({
+			command: "e-flutter-gen.scaffold",
+			title: "Wrap with Scaffold"
 		});
 		return codeActions;
 	}

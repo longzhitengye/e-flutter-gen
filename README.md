@@ -25,6 +25,6 @@ Initial release with the "FutureBuilder" snippet added.
 ### 1.1.0
 add wrap with scaffold
 
-### 1.1.0
+### 1.2.0
 add `Run builder` to .dart file.
 **Enjoy!**

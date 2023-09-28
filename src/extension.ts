@@ -76,7 +76,7 @@ export function activate(context: vscode.ExtensionContext) {
 			// });
 			setTimeout(() => {
 				terminal.dispose();
-			}, 15000);
+			}, 30000);
 			// 设置终端关闭的监听器
 			// vscode.window.onDidCloseTerminal(closedTerminal => {
 			// 	if (closedTerminal === terminal) {
